@@ -8,7 +8,7 @@ class StartScreen extends Component {
     return (
       <div className="ControlsContainer">
       	Welcome to the Dungeon
-      	<button onClick={this.props.startGame} >Start Game</button>
+      	<button onClick={this.props.startGame}>Start Game</button>
       </div>
     );
   }

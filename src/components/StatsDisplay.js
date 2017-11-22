@@ -5,7 +5,14 @@ class StatDisplay extends Component {
   render() {
     return (
       <div className="StatsContainer">
-        {this.props.playerHealth}
+
+        Your Health: {this.props.playerHealth}
+        <br/>
+        Heals: {this.props.playerHealsLeft}
+        <br/>
+        Grant Health: {this.props.grantHealth}
+        <br/>
+        Grant Lives: {this.props.grantLives}
       </div>
     );
   }
@@ -13,7 +20,10 @@ class StatDisplay extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		playerHealth: state.player.health
+		playerHealth: state.player.health,
+		playerHealsLeft: state.player.healsLeft,
+		grantHealth: state.grant.health,
+		grantLives: state.grant.lives
 	}
 }
 
