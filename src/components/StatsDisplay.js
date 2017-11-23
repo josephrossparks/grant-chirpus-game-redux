@@ -20,10 +20,10 @@ class StatDisplay extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		playerHealth: state.player.health,
-		playerHealsLeft: state.player.healsLeft,
-		grantHealth: state.grant.health,
-		grantLives: state.grant.lives
+		playerHealth: state.playerHealth,
+		playerHealsLeft: state.playerHealsLeft,
+		grantHealth: state.grantHealth,
+		grantLives: state.grantLives
 	}
 }
 
