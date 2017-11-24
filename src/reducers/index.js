@@ -68,6 +68,8 @@ function playerAttack(state) {
 		document.getElementById("attackbtn").disabled = true;
 		document.getElementById("healbtn").disabled = true;
 
+		document.getElementById("fleebtn").innerHTML = "Exit";
+
 		return Object.assign({}, state, {
 			playerRoundsWon: state.playerRoundsWon + 1,
 			messageOnScreen: "Bih, you win.",
