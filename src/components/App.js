@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import StartScreen from './StartScreen.js';
+import GameText from './GameText.js';
 import StatsDisplay from './StatsDisplay.js';
 import Controls from './Controls.js';
 
@@ -11,6 +12,7 @@ class App extends Component {
     if (this.props.gameOn === true) {
       return (
         <div className="App">
+          <GameText />
           <StatsDisplay />
           <Controls />
         </div>

@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
 	gameOn: false,
-	messageOnScreen: "",
+	messageOnScreen: "You have entereed the dungeon of Grant Chirpus. What will you do?",
 	playerName: "",
 	playerHealth: 40,
 	playerLives: 1,
@@ -21,10 +21,12 @@ export default function (state = INITIAL_STATE, action) {
 
     	case 'PLAYER_ATTACK':
     		return playerAttack(state);
+
+    	case 'PLAYER_HEAL':
+    		return playerHeal(state);
          
         default:
-        	return state;
-        	
+        	return state;   	
     }
 }
 
@@ -40,17 +42,56 @@ function resetGame(state) {
 
 function playerAttack(state) {
 
+	var attackMessage = "You attacked Grant Chirpus! What will you do now?";
+	var stunMessage = "You've stunned Grant Chirpus. His minion uses a potion to restore his health. It will take "+(state.grantLives-1)+" more stuns to defeat him. What will you do now?";
+
 	var newGrantHealth = state.grantHealth - getRandomInt(1, 5);
 
-	if (newGrantHealth > 0) {
+	if (newGrantHealth <= 0) {
+		var newGrantLives = state.grantLives - 1
+	}
+
+	if (newGrantHealth > 0) { 
 		return Object.assign({}, state, {
+			messageOnScreen: attackMessage,
         	grantHealth: newGrantHealth
     	});
-	} else {
+	} else if (newGrantHealth <= 0 && newGrantLives > 0) {
 		return Object.assign({}, state, {
+			playerRoundsWon: state.playerRoundsWon + 1,
+			messageOnScreen: stunMessage,
 			grantHealth: 10,
 			grantLives: state.grantLives - 1
 		})
+	} else if (newGrantHealth <= 0 && newGrantLives <= 0) {
+
+		document.getElementById("attackbtn").disabled = true;
+		document.getElementById("healbtn").disabled = true;
+
+		return Object.assign({}, state, {
+			playerRoundsWon: state.playerRoundsWon + 1,
+			messageOnScreen: "Bih, you win.",
+			grantHealth: 0,
+			grantLives: 0
+		})
+	}
+}
+
+function playerHeal(state) {
+
+	if (state.playerHealsLeft > 0) {
+
+		var newPlayerHealth = state.playerHealth + getRandomInt(1,10);
+		var newPlayerHealsLeft = state.playerHealsLeft - 1;
+
+		return Object.assign({}, state, {
+			messageOnScreen: "You healed! What will you do now?",
+        	playerHealth: newPlayerHealth,
+        	playerHealsLeft: newPlayerHealsLeft
+    	});
+
+	} else {
+		return state;
 	}
 }
 

@@ -15,3 +15,9 @@ export function playerAttack() {
 		type: "PLAYER_ATTACK"
 	}
 }
+
+export function playerHeal() {
+	return {
+		type: "PLAYER_HEAL"
+	}
+}
