@@ -12,13 +12,26 @@ class App extends Component {
     if (this.props.gameOn === true) {
       return (
         <div className="App">
-          <GameText />
-          <StatsDisplay />
+          <div className="Bezel">
+            <div className="Screen">
+              <GameText />
+              <StatsDisplay />
+            </div>
+          </div>
           <Controls />
         </div>
       );
     } else {
-      return ( <StartScreen /> )
+      return (
+        <div className="App">
+          <div className="Bezel">
+            <div className="Screen">
+              <StartScreen />
+            </div>
+            <Controls />
+          </div>
+        </div>
+      );
     }
 
   }

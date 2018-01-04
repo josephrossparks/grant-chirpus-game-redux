@@ -67,8 +67,7 @@ function playerAttack(state) {
 
 		document.getElementById("attackbtn").disabled = true;
 		document.getElementById("healbtn").disabled = true;
-
-		document.getElementById("fleebtn").innerHTML = "Exit";
+		document.getElementById("fleebtn").innerHTML = "RESET";
 
 		return Object.assign({}, state, {
 			playerRoundsWon: state.playerRoundsWon + 1,
@@ -97,7 +96,7 @@ function playerHeal(state) {
 	}
 }
 
-function getRandomInt(min, max) {//Nested into combatLoop
+function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;

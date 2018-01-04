@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class GameText extends Component {
-  render() {
+  
+  render(){
+
     return (
-      <div className="StatsContainer">
-        {this.props.messageOnScreen}
+      <div className="GameText">
+        <p>{this.props.messageOnScreen}</p>
       </div>
     );
   }

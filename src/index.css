@@ -1,5 +1,140 @@
+/* -- GLOBAL STYLES -- */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+    box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-image: url(images/tile.png);
+  background-position: center;
+  background-color: #F8FFE5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+p {
+	font-family: 'Press Start 2P', sans-serif;
+	font-size: 0.7em;
+	line-height: 1.2em;
+}
+
+@font-face {
+	font-family: 'nes-console-controller';
+	src: url(fonts/NES_Controller_MrShrike.ttf);
+}
+
+.App {
+	box-sizing: border-box;
+	margin-top: 70px;
+	width: 300px;
+	height: 500px;
+	padding: 20px;
+
+	border-radius: 8px 8px 30px 30px;
+	background-color: #1B9AAA;
+	box-shadow: 0 0px 20px rgba(0,0,0,0.4);
+}
+
+.Bezel {
+	width: 260px;
+	height: 280px;
+	background-color: black;
+	padding: 25px;
+	border-radius: 5px 5px 5px 5px;
+}
+
+.Screen {
+	width: 210px;
+	height: 230px;
+	padding: 10px;
+	background-color: #F8FFE5;
+}
+
+.GameText {
+	width: 200px;
+	height: 150px;
+}
+
+.StatsContainer {
+	padding-top: 10px;
+	border-top: 2px solid black;
+}
+
+.ControlsContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.GameControls {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+
+	margin-top: 20px;
+	padding: 0 20px;
+}
+
+.GameButton {
+	width: 60px;
+	height: 60px;
+	border-radius: 50px;
+
+	border-style: none;
+	background-color: #EF476F;
+	box-shadow: 0 3px 0px rgba(0,0,0,0.75);
+
+	display: flex;
+	justify-content: center;
+}
+
+.GameControlLabels {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+
+	margin-top: 10px;
+	padding: 0 20px;
+}
+
+p.GameControlLabel {
+	position: relative;
+	top: 65px;
+	left: 3px;
+	
+	font-family: 'nes-console-controller';
+	font-size: 1.25em;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.ResetControl {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+#fleebtn {
+	width: 100px;
+	height: 30px;
+	background-color: lightgrey;
+	box-shadow: 0 3px 0px rgba(0,0,0,0.75);
+
+	border-radius: 5px;
+
+	font-family: 'nes-console-controller';
+	letter-spacing: 1px;
+	font-size: 1.25em;
+}
+

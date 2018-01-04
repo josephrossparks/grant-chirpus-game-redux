@@ -7,9 +7,13 @@ class Controls extends Component {
   render() {
     return (
       <div className="ControlsContainer">
-      	<button id="attackbtn" onClick={this.props.playerAttack}>Attack</button>
-      	<button id="healbtn" onClick={this.props.playerHeal}>Heal</button>
-      	<button id="fleebtn" onClick={this.props.resetGame}>Flee</button>
+      	<div className="GameControls">
+      		<div className="GameButton" id="attackbtn" onClick={this.props.playerAttack}><p className="GameControlLabel">Attack</p></div>
+      		<div className="GameButton" id="healbtn" onClick={this.props.playerHeal}><p className="GameControlLabel">Heal</p></div>
+      	</div>
+      	<div className="ResetControl">
+      		<button id="fleebtn" onClick={this.props.resetGame}>Flee</button>
+      	</div>
       </div>
     );
   }

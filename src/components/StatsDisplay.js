@@ -6,13 +6,11 @@ class StatDisplay extends Component {
     return (
       <div className="StatsContainer">
 
-        Your Health: {this.props.playerHealth}
-        <br/>
-        Heals: {this.props.playerHealsLeft}
-        <br/>
-        Grant Health: {this.props.grantHealth}
-        <br/>
-        Grant Lives: {this.props.grantLives}
+        <p>Your Health: {this.props.playerHealth}</p>
+        <p>Heals: {this.props.playerHealsLeft}</p>
+        <p>Grant Health: {this.props.grantHealth}</p>
+        <p>Grant Lives: {this.props.grantLives}</p>
+        
       </div>
     );
   }
